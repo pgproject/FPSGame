@@ -28,5 +28,7 @@ public sealed class PlayerButtons
 
     private string m_jumpButton = "Jump";
     public string JumpButton => m_jumpButton;
-    
+
+    private string m_mousePosition = "MousePosition";
+    public string MousePosition => m_mousePosition;
 }
