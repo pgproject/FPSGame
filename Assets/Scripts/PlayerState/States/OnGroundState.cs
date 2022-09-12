@@ -55,7 +55,7 @@ namespace Assets.Scripts.PlayerState
             base.LogicUpdate();
             if (m_isJumping)
             {
-
+                m_stateMachine.ChangeState(m_playerController.JumpingState);
             }
             if (m_isCrouching)
             {

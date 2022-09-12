@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public StateMachine MovmentStateMachine;
-    public StandingState StandingState;
-    public CrouchingState CrouchingState;
+    public StateMachine MovmentStateMachine { get; private set; }
+    public StandingState StandingState { get; private set; }
+    public CrouchingState CrouchingState { get; private set; }
+    public JumpingState JumpingState { get; private set; }
 
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movment speeds of player"), Space(10)]
     [SerializeField] private float m_movmentSpeed;
-    [SerializeField] private float m_gravitySpeed;
+    [SerializeField] private float m_jumpingSpeed;
 
     [Header("Speed rotatnion of camera"), Space(10)]
     [SerializeField] private float m_speedHorizontalRotationCamera;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
         StandingState = new StandingState(this, MovmentStateMachine, m_playerInput);
         CrouchingState = new CrouchingState(this, MovmentStateMachine, m_playerInput);
+        JumpingState = new JumpingState(this, MovmentStateMachine, m_playerInput);
 
         MovmentStateMachine.Initialize(StandingState);
 
@@ -88,5 +90,18 @@ public class PlayerController : MonoBehaviour
             m_playerCollider.height = m_normalHeightOfCollider;
             m_playerCamera.transform.localPosition = m_normalCameraPos;
         }
+    }
+    public void Jump()
+    {
+        m_rigidbodyPlayer.MovePosition(gameObject.transform.position + Vector3.up * m_jumpingSpeed);
+    }    
+    private void OnCollisionEnter(Collision collision)
+    {
+        m_rigidbodyPlayer.useGravity = false;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        m_rigidbodyPlayer.useGravity = true;
     }
 }

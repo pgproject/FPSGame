@@ -418,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 963194228, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_playerInput
       value: 
@@ -425,6 +429,10 @@ PrefabInstance:
     - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_gravitySpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
+      propertyPath: m_jumpingSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_playerCamera
@@ -445,6 +453,14 @@ PrefabInstance:
     - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_cameraPosOnCrouch
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
+      propertyPath: m_speedVerticalRotationCamera
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
+      propertyPath: m_speedHorizontalRotationCamera
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1468508572, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_UseGravity
