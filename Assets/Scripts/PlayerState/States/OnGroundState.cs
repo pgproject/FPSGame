@@ -8,11 +8,6 @@ namespace Assets.Scripts.PlayerState
 {
     public class OnGroundState : State
     {
-        protected InputAction m_movmentAction;
-        protected InputAction m_crouchAction;
-        protected InputAction m_jumpAction;
-        protected InputAction m_mousePosAction;
-
         protected float m_speed;
         protected float m_rotationSpeed;
 
@@ -24,10 +19,7 @@ namespace Assets.Scripts.PlayerState
 
         public OnGroundState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base (playerController, stateMachine, playerInput)
         {
-            m_movmentAction = playerInput.actions.FindAction(m_playerButtons.WSADButtons);
-            m_crouchAction = playerInput.actions.FindAction(m_playerButtons.CrouchButton);
-            m_jumpAction = playerInput.actions.FindAction(m_playerButtons.JumpButton);
-            m_mousePosAction = playerInput.actions.FindAction(m_playerButtons.MousePosition);
+            
         }
 
         public override void Enter()

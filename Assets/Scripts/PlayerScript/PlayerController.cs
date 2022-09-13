@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public CrouchingState CrouchingState { get; private set; }
     public JumpingState JumpingState { get; private set; }
 
+    private const int GROUND_LAYER = 6;
+
+
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
     [SerializeField] private Transform m_playerTransform;
@@ -33,11 +36,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_normalColliderCenterBounds;
     private Vector3 m_normalCameraPos;
 
-
+    private bool m_isGround;
     private float m_normalHeightOfCollider;
-    [MinValue(30), MaxValue(90)] private float m_pitch;
+    private float m_pitch;
     private float m_yaw;
 
+    public bool IsGround => m_isGround;
     private void Start()
     {
         MovmentStateMachine = new StateMachine();
@@ -58,6 +62,7 @@ public class PlayerController : MonoBehaviour
         MovmentStateMachine.CurremtState.HandleInput();
 
         MovmentStateMachine.CurremtState.LogicUpdate();
+        Debug.Log(MovmentStateMachine.CurremtState);
     }
     private void FixedUpdate()
     {
@@ -91,17 +96,29 @@ public class PlayerController : MonoBehaviour
             m_playerCamera.transform.localPosition = m_normalCameraPos;
         }
     }
-    public void Jump()
+    public void Jump(float jumpStrenght)
     {
-        m_rigidbodyPlayer.MovePosition(gameObject.transform.position + Vector3.up * m_jumpingSpeed);
+        float defaultJumpSpeed = m_jumpingSpeed;
+        m_jumpingSpeed *= jumpStrenght;
+        transform.Translate(gameObject.transform.position + Vector3.up * m_jumpingSpeed);
+        m_isGround = false;
+        m_jumpingSpeed = defaultJumpSpeed;
     }    
+
     private void OnCollisionEnter(Collision collision)
     {
-        m_rigidbodyPlayer.useGravity = false;
+        if (collision.gameObject.layer == GROUND_LAYER)
+        {
+            m_rigidbodyPlayer.useGravity = false;
+            m_isGround = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        m_rigidbodyPlayer.useGravity = true;
+        if (collision.gameObject.layer == GROUND_LAYER)
+        {
+            m_rigidbodyPlayer.useGravity = true;
+        }
     }
 }
