@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_cameraPosOnCrouch;
 
     [Header("Movment speeds of player"), Space(10)]
-    [SerializeField] private float m_movmentSpeed;
-    [SerializeField] private float m_jumpingSpeed;
+    [SerializeField] private float m_walkSpeed;
+    [SerializeField] private float m_runSpeed;
+    [SerializeField] private float m_inAirSpeed;
+    [SerializeField] private float m_jumpForce;
 
     [Header("Speed rotatnion of camera"), Space(10)]
     [SerializeField] private float m_speedHorizontalRotationCamera;
@@ -42,6 +44,9 @@ public class PlayerController : MonoBehaviour
     private float m_yaw;
 
     public bool IsGround => m_isGround;
+    public float JumpForce => m_jumpForce;
+    public float InAirSpeed => m_inAirSpeed;
+    public float WalkSpeed => m_walkSpeed;
     private void Start()
     {
         MovmentStateMachine = new StateMachine();
@@ -69,9 +74,9 @@ public class PlayerController : MonoBehaviour
         MovmentStateMachine.CurremtState.PhysicsUpdate();
     }
 
-    public void Move(Vector2 inputVector)
+    public void Move(Vector2 inputVector, float speed)
     {
-        m_rigidbodyPlayer.MovePosition(m_playerTransform.position + new Vector3(inputVector.x * m_movmentSpeed, 0, inputVector.y * m_movmentSpeed) * Time.deltaTime);
+        m_rigidbodyPlayer.MovePosition(m_playerTransform.position + new Vector3(inputVector.x * speed, 0, inputVector.y * speed) * Time.deltaTime);
     }
 
     public void CameraRotation(Vector2 mousePos)
@@ -96,13 +101,9 @@ public class PlayerController : MonoBehaviour
             m_playerCamera.transform.localPosition = m_normalCameraPos;
         }
     }
-    public void Jump(float jumpStrenght)
+    public void Jump(float forceJump)
     {
-        float defaultJumpSpeed = m_jumpingSpeed;
-        m_jumpingSpeed *= jumpStrenght;
-        transform.Translate(gameObject.transform.position + Vector3.up * m_jumpingSpeed);
-        m_isGround = false;
-        m_jumpingSpeed = defaultJumpSpeed;
+        m_rigidbodyPlayer.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
     }    
 
     private void OnCollisionEnter(Collision collision)
@@ -118,7 +119,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == GROUND_LAYER)
         {
-            m_rigidbodyPlayer.useGravity = true;
+            m_isGround = false;
         }
+    }
+    public void TurnOnGravity()
+    {
+        m_rigidbodyPlayer.useGravity = true;
     }
 }
