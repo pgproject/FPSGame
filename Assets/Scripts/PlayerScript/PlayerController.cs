@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public float JumpForce => m_jumpForce;
     public float InAirSpeed => m_inAirSpeed;
     public float WalkSpeed => m_walkSpeed;
+    public float RunSpeed => m_runSpeed;
     private void Start()
     {
         MovmentStateMachine = new StateMachine();

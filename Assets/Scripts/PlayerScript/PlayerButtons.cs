@@ -31,4 +31,7 @@ public sealed class PlayerButtons
 
     private string m_mousePosition = "MousePosition";
     public string MousePosition => m_mousePosition;
+
+    private string m_runButton = "Run";
+    public string RunButton => m_runButton;
 }

@@ -17,12 +17,12 @@ namespace Assets.Scripts.PlayerState
 
         public OnGroundState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base (playerController, stateMachine, playerInput)
         {
-            m_movmentSpeed = m_playerController.WalkSpeed;
         }
 
         public override void Enter()
         {
             base.Enter();
+            m_movmentSpeed = m_playerController.WalkSpeed;
             m_inputMovementVector = Vector2.zero;
         }
         

@@ -19,8 +19,20 @@ namespace Assets.Scripts.PlayerState.States
         {
             m_jumpAction.started += ctx => m_canCountTime = true;
             m_jumpAction.canceled += ctx => m_canCountTime = false;
+            m_jumpAction.canceled += ctx => m_movmentSpeed = m_inAirSpeed;
+
+            m_runAction.started += ctx => m_movmentSpeed = m_playerController.RunSpeed;
+            m_runAction.started += ctx => m_inAirSpeed = m_playerController.RunSpeed * 5;
+
+            m_runAction.canceled += ctx => m_movmentSpeed = m_playerController.WalkSpeed;
+            m_runAction.canceled += ctx => m_inAirSpeed = m_playerController.WalkSpeed;
+
+            m_movmentAction.started += ctx => m_inAirSpeed = m_playerController.WalkSpeed * 2;
+            m_movmentAction.started += ctx => m_movmentSpeed = m_playerController.WalkSpeed;
+
+            m_movmentAction.canceled += ctx => m_inAirSpeed = m_playerController.InAirSpeed;
+
             m_maxJumpForce = m_playerController.JumpForce;
-            m_movmentSpeed = m_playerController.WalkSpeed;
         }
         public override void Enter()
         {
@@ -56,10 +68,8 @@ namespace Assets.Scripts.PlayerState.States
                 m_realJumpForce = m_jumpButtonHeldTime * m_maxJumpForce;
 
                 m_playerPositionOnYAxis = m_playerController.transform.position.y + m_realJumpForce;
-                m_movmentSpeed = m_playerController.InAirSpeed;
                 m_playerRealaseButtonJump = true;
                 m_playerController.Jump(m_realJumpForce);
-                
             }
 
             if (m_playerController.IsGround && m_playerRealaseButtonJump)

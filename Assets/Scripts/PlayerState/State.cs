@@ -10,11 +10,11 @@ public abstract class State
     protected PlayerInput m_playerInput;
     protected PlayerButtons m_playerButtons = PlayerButtons.Instance;
 
+    protected InputAction m_mousePosAction;
     protected InputAction m_movmentAction;
     protected InputAction m_crouchAction;
     protected InputAction m_jumpAction;
-    protected InputAction m_mousePosAction;
-
+    protected InputAction m_runAction;
     protected State (PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput)
     {
         m_playerController = playerController;
@@ -25,6 +25,7 @@ public abstract class State
         m_crouchAction = playerInput.actions.FindAction(m_playerButtons.CrouchButton);
         m_jumpAction = playerInput.actions.FindAction(m_playerButtons.JumpButton);
         m_mousePosAction = playerInput.actions.FindAction(m_playerButtons.MousePosition);
+        m_runAction = playerInput.actions.FindAction(m_playerButtons.RunButton);
     }
     public virtual void Enter()
     {

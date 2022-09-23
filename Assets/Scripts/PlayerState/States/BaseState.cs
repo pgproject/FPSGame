@@ -11,9 +11,12 @@ namespace Assets.Scripts.PlayerState.States
         protected Vector2 m_inputMovementVector;
 
         protected float m_movmentSpeed;
+        protected float m_inAirSpeed;
         public BaseState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
         {
-
+            m_runAction.started += ctx => m_movmentSpeed = m_playerController.RunSpeed;
+            m_runAction.canceled += ctx => m_movmentSpeed = m_playerController.WalkSpeed;
+            m_inAirSpeed = playerController.InAirSpeed;
         }
 
         public override void Enter()
