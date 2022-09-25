@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     private const int GROUND_LAYER = 6;
 
-
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
     [SerializeField] private Transform m_playerTransform;
@@ -68,7 +67,6 @@ public class PlayerController : MonoBehaviour
         MovmentStateMachine.CurremtState.HandleInput();
 
         MovmentStateMachine.CurremtState.LogicUpdate();
-        Debug.Log(MovmentStateMachine.CurremtState);
     }
     private void FixedUpdate()
     {
