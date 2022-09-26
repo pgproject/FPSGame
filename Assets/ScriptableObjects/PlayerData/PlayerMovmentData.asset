@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22feea2b74e1894788691994218f2a2, type: 3}
+  m_Name: PlayerMovmentData
+  m_EditorClassIdentifier: 
+  m_walkSpeed: 3
+  m_runSpeed: 7
+  m_inAirSpeed: 2
+  m_speedHorizontalRotationCamera: 3
+  m_speedVerticalRotationCamera: 2
+  m_verticalMaxRotationCamera: 60
+  m_verticalMinRotationCamera: -80
+  m_jumpForce: 4
+  m_groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_cameraPosOnCrouch: 0.5
+  m_waitTimeToPlayerCanMove: 0.5

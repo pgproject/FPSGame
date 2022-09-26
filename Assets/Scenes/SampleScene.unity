@@ -383,6 +383,31 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1102171790497201457}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1042016380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 963194225, guid: 040d6d8f6b05ff9468fe3fe21779ca1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102171790497201457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1818360609 &1042016383
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042016380}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 0
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 0
+  m_IsContraintActive: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 1468508569}
+    weight: 1
 --- !u!1 &1262509453
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1262509455}
   - component: {fileID: 1262509454}
+  - component: {fileID: 1262509456}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -427,6 +453,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262509456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262509453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbeff30217ff9d43a0afc1c56a28971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerFightData: {fileID: 11400000, guid: c443b78372591f54581c569e76efcd72, type: 2}
+  m_playerMovmentData: {fileID: 11400000, guid: 88a66fb09300d5d449794d05d7c439bd,
+    type: 2}
 --- !u!136 &1468508566 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 1102171789616551079, guid: 040d6d8f6b05ff9468fe3fe21779ca1c,
@@ -540,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1468508572, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1102171789616551076, guid: 040d6d8f6b05ff9468fe3fe21779ca1c,
         type: 3}

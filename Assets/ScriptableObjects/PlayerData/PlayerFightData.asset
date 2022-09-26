@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: hp
+  m_Script: {fileID: 11500000, guid: 330ad5f1ed3baf7499e1e329ed261ed0, type: 3}
+  m_Name: PlayerFightData
   m_EditorClassIdentifier: 
-  m_hpPlayer: 2
+  m_startHp: 0
