@@ -1,7 +1,9 @@
 using Assets.Scripts.PlayerState;
 using Assets.Scripts.PlayerState.States;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private float m_verticalMaxRotationCamera;
     private float m_verticalMinRotationCamera;
     private LayerMask m_groundLayer;
+    private LayerMask m_interactableObjectLayer;
 
     private Vector3 m_normalColliderCenterBounds;
     private Vector3 m_normalCameraPos;
@@ -42,12 +45,16 @@ public class PlayerController : MonoBehaviour
     private float m_yaw;
     private float m_waitTimeToStartMove;
     private bool m_canRotate;
+    private RaycastHit m_raycastHit;
+    private IInteractableObject m_currentInteractObject;
+
 
     public bool IsGround => m_isGround;
     public float JumpForce => m_jumpForce;
     public float InAirSpeed => m_inAirSpeed;
     public float WalkSpeed => m_walkSpeed;
     public float RunSpeed => m_runSpeed;
+    public IInteractableObject CurrentInteractObject => m_currentInteractObject;
     private void Start()
     {
         MovmentStateMachine = new StateMachine();
@@ -76,7 +83,9 @@ public class PlayerController : MonoBehaviour
 
         m_cameraPosOnCrouch = playerMovmentData.CameraPosOnCrouch;
         m_groundLayer = playerMovmentData.GrundLayer;
+        m_interactableObjectLayer = playerMovmentData.InteractableObjectLayer;
         m_waitTimeToStartMove = playerMovmentData.WaitTimeToPlayerCanMove;
+
 
         MovmentStateMachine.Initialize(StandingState);
 
@@ -94,7 +103,6 @@ public class PlayerController : MonoBehaviour
         MovmentStateMachine.CurremtState.HandleInput();
 
         MovmentStateMachine.CurremtState.LogicUpdate();
-
     }
     private void FixedUpdate()
     {
@@ -114,7 +122,7 @@ public class PlayerController : MonoBehaviour
         m_pitch -= m_speedVerticalRotationCamera * mousePos.y;
 
         m_playerCamera.transform.eulerAngles = new Vector3(Mathf.Clamp(m_pitch, m_verticalMinRotationCamera, m_verticalMaxRotationCamera), 0, 0);
-        transform.eulerAngles = new Vector3(0, -m_yaw, 0);
+        transform.eulerAngles = new Vector3(0, m_yaw, 0);
     }
 
     public void Crouch(bool enterToCrouch)
@@ -135,7 +143,22 @@ public class PlayerController : MonoBehaviour
     public void Jump(float forceJump)
     {
         m_rigidbodyPlayer.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
-    }    
+    }
+
+    public void CheckObjectFromCameraForward()
+    {
+        if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out m_raycastHit))
+        {
+            if (m_raycastHit.collider.GetComponent<IInteractableObject>() != null)
+            {
+                m_currentInteractObject = m_raycastHit.collider.GetComponent<IInteractableObject>();
+            }
+        }
+        else
+        {
+            m_currentInteractObject = null;
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

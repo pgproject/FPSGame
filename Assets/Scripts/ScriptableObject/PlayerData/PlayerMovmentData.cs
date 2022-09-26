@@ -30,15 +30,20 @@ public class PlayerMovmentData : PlayerData
     [SerializeField, BoxGroup("Camera/Camera rotation")] private float m_verticalMinRotationCamera;
     public float VerticalMinRotationCamera => m_verticalMinRotationCamera;
 
-    [Space(10)]
+    [VerticalGroup("Layers", PaddingTop = 10)]
+    
+    [SerializeField, BoxGroup("Layers/Interact layer")] private LayerMask m_groundLayer;
+    public LayerMask GrundLayer => m_groundLayer;
+
+    [SerializeField, BoxGroup("Layers/Interact layer")] private LayerMask m_interactableObjectLayer;
+    public LayerMask InteractableObjectLayer => m_interactableObjectLayer;
+
     [SerializeField] private float m_jumpForce;
     public float JumpForce => m_jumpForce;
-    
-    [SerializeField] private LayerMask m_groundLayer;
-    public LayerMask GrundLayer => m_groundLayer;
 
     [SerializeField] private float m_cameraPosOnCrouch;
     public float CameraPosOnCrouch => m_cameraPosOnCrouch;
     [SerializeField] private float m_waitTimeToPlayerCanMove;
     public float WaitTimeToPlayerCanMove => m_waitTimeToPlayerCanMove;
+
 }

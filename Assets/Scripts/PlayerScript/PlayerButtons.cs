@@ -34,4 +34,7 @@ public sealed class PlayerButtons
 
     private string m_runButton = "Run";
     public string RunButton => m_runButton;
+
+    private string m_interactButton = "Interact";
+    public string InteractButton => m_interactButton;
 }
