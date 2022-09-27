@@ -118,17 +118,6 @@
                 },
                 {
                     "name": "",
-                    "id": "35b5767b-7172-42b4-abd8-40193328c525",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Movment",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "1329ce72-fef4-4151-9e98-61ce96dd177f",
                     "path": "<Keyboard>/c",
                     "interactions": "",
@@ -166,8 +155,19 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Movment",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35b5767b-7172-42b4-abd8-40193328c525",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Movment",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

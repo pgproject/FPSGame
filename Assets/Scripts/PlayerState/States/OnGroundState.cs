@@ -22,7 +22,7 @@ namespace Assets.Scripts.PlayerState
         public override void Enter()
         {
             base.Enter();
-            m_movmentSpeed = m_playerController.WalkSpeed;
+            m_movmentSpeed = m_playerMovmentData.WalkSpeed;
             m_inputMovementVector = Vector2.zero;
         }
         

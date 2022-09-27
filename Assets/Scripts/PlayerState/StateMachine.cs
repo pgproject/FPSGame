@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateMachine
 {
     public State CurremtState { get; private set; }
-
+    public State PreavoiusState { get; private set; }
     public void Initialize(State startState)
     {
         CurremtState = startState;
@@ -14,6 +14,7 @@ public class StateMachine
 
     public void ChangeState(State newState)
     {
+        PreavoiusState = CurremtState;
         CurremtState.Exit();
 
         CurremtState = newState;

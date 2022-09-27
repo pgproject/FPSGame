@@ -9,12 +9,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public StateMachine MovmentStateMachine { get; private set; }
+    public StateMachine StateMachine { get; private set; }
     public StandingState StandingState { get; private set; }
     public CrouchingState CrouchingState { get; private set; }
     public JumpingState JumpingState { get; private set; }
-
-    
+    public EquipmentOpenState EquipmentOpenState { get; private set; }
 
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
@@ -23,23 +22,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera m_playerCamera;
     
     private float m_cameraPosOnCrouch;
-    private float m_walkSpeed;
-    private float m_runSpeed;
-    private float m_inAirSpeed;
-    private float m_jumpForce;
 
     private float m_speedHorizontalRotationCamera;
     private float m_speedVerticalRotationCamera;
 
     private float m_verticalMaxRotationCamera;
     private float m_verticalMinRotationCamera;
-    private LayerMask m_groundLayer;
-    private LayerMask m_interactableObjectLayer;
+    private int m_groundLayer;
+    private float m_distanceToInteractObject;
 
     private Vector3 m_normalColliderCenterBounds;
     private Vector3 m_normalCameraPos;
 
-    private bool m_isGround;
+    private bool m_isGround = true;
     private float m_normalHeightOfCollider;
     private float m_pitch;
     private float m_yaw;
@@ -50,30 +45,15 @@ public class PlayerController : MonoBehaviour
 
 
     public bool IsGround => m_isGround;
-    public float JumpForce => m_jumpForce;
-    public float InAirSpeed => m_inAirSpeed;
-    public float WalkSpeed => m_walkSpeed;
-    public float RunSpeed => m_runSpeed;
     public IInteractableObject CurrentInteractObject => m_currentInteractObject;
     private void Start()
     {
-        MovmentStateMachine = new StateMachine();
-
-        StandingState = new StandingState(this, MovmentStateMachine, m_playerInput);
-        CrouchingState = new CrouchingState(this, MovmentStateMachine, m_playerInput);
-        JumpingState = new JumpingState(this, MovmentStateMachine, m_playerInput);
-
-
         m_normalColliderCenterBounds = m_playerCollider.center;
         m_normalHeightOfCollider = m_playerCollider.height;
         m_normalCameraPos = m_playerCamera.transform.localPosition;
 
         PlayerMovmentData playerMovmentData = GeneralAccess.Instance.PlayerMovmentData;
-
-        m_walkSpeed = playerMovmentData.WalkSpeed;
-        m_runSpeed = playerMovmentData.RunSpeed;
-        m_inAirSpeed = playerMovmentData.InAirSpeed;
-        m_jumpForce = playerMovmentData.JumpForce;
+        m_groundLayer = (int)Mathf.Log(playerMovmentData.GrundLayer.value, 2);
 
         m_speedHorizontalRotationCamera = playerMovmentData.SpeedHorizontalRotationCamera;
         m_speedVerticalRotationCamera = playerMovmentData.SpeedVerticalRotationCamera;
@@ -82,12 +62,17 @@ public class PlayerController : MonoBehaviour
         m_verticalMinRotationCamera = playerMovmentData.VerticalMinRotationCamera;
 
         m_cameraPosOnCrouch = playerMovmentData.CameraPosOnCrouch;
-        m_groundLayer = playerMovmentData.GrundLayer;
-        m_interactableObjectLayer = playerMovmentData.InteractableObjectLayer;
         m_waitTimeToStartMove = playerMovmentData.WaitTimeToPlayerCanMove;
+        m_distanceToInteractObject = playerMovmentData.DistanceToInteractObject;
 
+        StateMachine = new StateMachine();
 
-        MovmentStateMachine.Initialize(StandingState);
+        StandingState = new StandingState(this, StateMachine, m_playerInput);
+        CrouchingState = new CrouchingState(this, StateMachine, m_playerInput);
+        JumpingState = new JumpingState(this, StateMachine, m_playerInput);
+        EquipmentOpenState = new EquipmentOpenState(this, StateMachine, m_playerInput);
+
+        StateMachine.Initialize(StandingState);
 
         StartCoroutine(WaitToStartMove());
     }
@@ -100,13 +85,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        MovmentStateMachine.CurremtState.HandleInput();
+        StateMachine.CurremtState.HandleInput();
 
-        MovmentStateMachine.CurremtState.LogicUpdate();
+        StateMachine.CurremtState.LogicUpdate();
     }
     private void FixedUpdate()
     {
-        MovmentStateMachine.CurremtState.PhysicsUpdate();
+        StateMachine.CurremtState.PhysicsUpdate();
     }
 
     public void Move(Vector2 inputVector, float speed)
@@ -147,7 +132,7 @@ public class PlayerController : MonoBehaviour
 
     public void CheckObjectFromCameraForward()
     {
-        if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out m_raycastHit))
+        if (Physics.Raycast(m_playerCamera.transform.position, m_playerCamera.transform.forward, out m_raycastHit, m_distanceToInteractObject))
         {
             if (m_raycastHit.collider.GetComponent<IInteractableObject>() != null)
             {
@@ -162,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == m_groundLayer.value)
+        if (collision.gameObject.layer == m_groundLayer)
         {
             m_rigidbodyPlayer.useGravity = false;
             m_isGround = true;
@@ -171,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == m_groundLayer.value)
+        if (collision.gameObject.layer == m_groundLayer)
         {
             m_isGround = false;
         }

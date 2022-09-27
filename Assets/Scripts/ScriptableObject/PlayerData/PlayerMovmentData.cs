@@ -16,7 +16,13 @@ public class PlayerMovmentData : PlayerData
     
     [SerializeField, BoxGroup("Movment")] private float m_inAirSpeed;
     public float InAirSpeed => m_inAirSpeed;
-    
+
+    [SerializeField, BoxGroup("Movment")] private float m_inAirSpeedWhileWalking;
+    public float InAirSpeedWhileWalking => m_inAirSpeedWhileWalking;
+
+    [SerializeField, BoxGroup("Movment")] private float m_inAirSpeedWhileRunning;
+    public float InAirSpeedWhileRunning => m_inAirSpeedWhileRunning;
+
     [VerticalGroup("Camera", PaddingTop = 10)]
     [SerializeField, BoxGroup("Camera/Camera rotation")] private float m_speedHorizontalRotationCamera;
     public float SpeedHorizontalRotationCamera => m_speedHorizontalRotationCamera;
@@ -45,5 +51,8 @@ public class PlayerMovmentData : PlayerData
     public float CameraPosOnCrouch => m_cameraPosOnCrouch;
     [SerializeField] private float m_waitTimeToPlayerCanMove;
     public float WaitTimeToPlayerCanMove => m_waitTimeToPlayerCanMove;
+
+    [SerializeField] private float m_distanceToInteractObject;
+    public float DistanceToInteractObject => m_distanceToInteractObject;
 
 }

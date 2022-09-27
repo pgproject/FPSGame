@@ -14,13 +14,12 @@ namespace Assets.Scripts.PlayerState.States
         protected float m_movmentSpeed;
         protected float m_inAirSpeed;
         protected bool m_interactButtonPress;
-        protected List<IInteractableObject> m_interactableObjects = new List<IInteractableObject>();
 
         public BaseState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
         {
-            m_runAction.started += ctx => m_movmentSpeed = m_playerController.RunSpeed;
-            m_runAction.canceled += ctx => m_movmentSpeed = m_playerController.WalkSpeed;
-            m_inAirSpeed = playerController.InAirSpeed;
+            m_runAction.started += ctx => m_movmentSpeed = m_playerMovmentData.RunSpeed;
+            m_runAction.canceled += ctx => m_movmentSpeed = m_playerMovmentData.WalkSpeed;
+            m_inAirSpeed = m_playerMovmentData.InAirSpeed;
         }
 
         public override void Enter()
@@ -49,6 +48,7 @@ namespace Assets.Scripts.PlayerState.States
                 if (m_playerController.CurrentInteractObject != null)
                 {
                     m_playerController.CurrentInteractObject.Interact();
+                    m_stateMachine.ChangeState(m_playerController.EquipmentOpenState);
                 }
             }
         }
