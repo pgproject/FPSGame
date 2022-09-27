@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

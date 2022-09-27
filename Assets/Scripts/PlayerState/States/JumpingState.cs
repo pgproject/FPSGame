@@ -68,7 +68,6 @@ namespace Assets.Scripts.PlayerState.States
                 m_jumpButtonHeldTime = Mathf.Clamp(m_jumpButtonHeldTime, 0, 1);
                 m_realJumpForce = m_jumpButtonHeldTime * m_maxJumpForce;
 
-
                 m_playerRealaseButtonJump = true;
             }
 

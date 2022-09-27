@@ -6,10 +6,9 @@ using UnityEngine.InputSystem;
 public class EquipmentOpenState : State
 {
     protected bool m_interactButtonPress;
-
     public EquipmentOpenState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
     {
-        
+
     }
 
     public override void Enter()

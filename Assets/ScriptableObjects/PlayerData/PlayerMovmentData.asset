@@ -15,13 +15,16 @@ MonoBehaviour:
   m_walkSpeed: 3
   m_runSpeed: 7
   m_inAirSpeed: 2
+  m_inAirSpeedWhileWalking: 2
+  m_inAirSpeedWhileRunning: 5
   m_speedHorizontalRotationCamera: 3
   m_speedVerticalRotationCamera: 2
   m_verticalMaxRotationCamera: 60
   m_verticalMinRotationCamera: -80
-  m_jumpForce: 4
   m_groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  m_jumpForce: 4
   m_cameraPosOnCrouch: 0.5
   m_waitTimeToPlayerCanMove: 0.5
+  m_distanceToInteractObject: 1.2

@@ -38,11 +38,8 @@ public class PlayerMovmentData : PlayerData
 
     [VerticalGroup("Layers", PaddingTop = 10)]
     
-    [SerializeField, BoxGroup("Layers/Interact layer")] private LayerMask m_groundLayer;
+    [SerializeField] private LayerMask m_groundLayer;
     public LayerMask GrundLayer => m_groundLayer;
-
-    [SerializeField, BoxGroup("Layers/Interact layer")] private LayerMask m_interactableObjectLayer;
-    public LayerMask InteractableObjectLayer => m_interactableObjectLayer;
 
     [SerializeField] private float m_jumpForce;
     public float JumpForce => m_jumpForce;
