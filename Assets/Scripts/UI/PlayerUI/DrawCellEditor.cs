@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 
 [CustomEditor(typeof(DrawCell))]
-public class DrawCellEditor : Editor
+public class DrawCellEditor : OdinEditor
 {
     public override void OnInspectorGUI()
     {
