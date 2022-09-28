@@ -687,7 +687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8810075738959807459}
   m_itemField: {fileID: 689393536810793406}
 --- !u!1 &553615654200669422
 GameObject:
@@ -1301,7 +1300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 476556378145581561}
   m_itemField: {fileID: 1983133562291521439}
 --- !u!1 &1136857298687730413
 GameObject:
@@ -1632,7 +1630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 3703556690939003794}
   m_itemField: {fileID: 8573692392547200127}
 --- !u!1 &1455528501326778076
 GameObject:
@@ -1781,7 +1778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 107978189576467016}
   m_itemField: {fileID: 2431261819278685813}
 --- !u!1 &1537986586658712046
 GameObject:
@@ -2112,7 +2108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 9194886486372168842}
   m_itemField: {fileID: 1481781660322581356}
 --- !u!1 &1861348889271394903
 GameObject:
@@ -2261,7 +2256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1170352852975419168}
   m_itemField: {fileID: 1938322680168967136}
 --- !u!1 &1995944932527423169
 GameObject:
@@ -2501,7 +2495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6366691388873154607}
   m_itemField: {fileID: 3422871391855007505}
 --- !u!1 &2239985790622152204
 GameObject:
@@ -2650,7 +2643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 7435945313309799313}
   m_itemField: {fileID: 850425913968408983}
 --- !u!1 &2251325124257944635
 GameObject:
@@ -2799,7 +2791,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6929723850167924914}
   m_itemField: {fileID: 1545390184162738958}
 --- !u!1 &2251329184450684240
 GameObject:
@@ -3039,7 +3030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8413845169650319849}
   m_itemField: {fileID: 5424350269098942568}
 --- !u!1 &2519215434075467281
 GameObject:
@@ -3370,7 +3360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6770586375930371989}
   m_itemField: {fileID: 5582774135123367369}
 --- !u!1 &2661847289971593041
 GameObject:
@@ -3519,7 +3508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2484831951980601297}
   m_itemField: {fileID: 80791090701756018}
 --- !u!1 &3147252893988025994
 GameObject:
@@ -4760,7 +4748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4469902269401102461}
   m_itemField: {fileID: 1096813712641658724}
 --- !u!1 &4517797414810873094
 GameObject:
@@ -4909,7 +4896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1438497648843667755}
   m_itemField: {fileID: 2998566380177003098}
 --- !u!1 &4521136216246845949
 GameObject:
@@ -5058,7 +5044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8239365558220419435}
   m_itemField: {fileID: 1591233975193450734}
 --- !u!1 &4577354426516896474
 GameObject:
@@ -5154,7 +5139,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4577354426516896474}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5410,7 +5395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1138477533764134627}
   m_itemField: {fileID: 6884749983055351123}
 --- !u!1 &4726776731101798420
 GameObject:
@@ -5559,7 +5543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 3743724348849854528}
   m_itemField: {fileID: 3004384485260586412}
 --- !u!1 &4887764415407563664
 GameObject:
@@ -5981,7 +5964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2951352222356682788}
   m_itemField: {fileID: 531524288780762290}
 --- !u!1 &5322982414936177514
 GameObject:
@@ -6182,7 +6164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8579263997035573626}
   m_itemField: {fileID: 4490316486900090211}
 --- !u!1 &5396941164878607581
 GameObject:
@@ -6331,7 +6312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8378414307885927285}
   m_itemField: {fileID: 5918435637816431268}
 --- !u!1 &5460985274432921048
 GameObject:
@@ -6480,7 +6460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4408176848300656778}
   m_itemField: {fileID: 4824735190757320809}
 --- !u!1 &5547293631399722826
 GameObject:
@@ -6902,7 +6881,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1648857332794821172}
   m_itemField: {fileID: 105932051432870788}
 --- !u!1 &5781470476276276912
 GameObject:
@@ -7051,7 +7029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 7641134901659206615}
   m_itemField: {fileID: 3997864883028833464}
 --- !u!1 &5828298061778435244
 GameObject:
@@ -7200,7 +7177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1089934582079079140}
   m_itemField: {fileID: 7223748552272005705}
 --- !u!1 &5878962369043722669
 GameObject:
@@ -7349,7 +7325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2491737472815268494}
   m_itemField: {fileID: 8987180895200619107}
 --- !u!1 &5908883749836742268
 GameObject:
@@ -7498,7 +7473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 157990837904511031}
   m_itemField: {fileID: 1754916227803257673}
 --- !u!1 &6006465208003338789
 GameObject:
@@ -7647,7 +7621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6084771732383640444}
   m_itemField: {fileID: 9004258747919299044}
 --- !u!1 &6120814838319706945
 GameObject:
@@ -7796,7 +7769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 299749167388651225}
   m_itemField: {fileID: 2155178589435386607}
 --- !u!1 &6137089655486252271
 GameObject:
@@ -7945,7 +7917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4504137716689323172}
   m_itemField: {fileID: 965531882389872520}
 --- !u!1 &6269678209298655805
 GameObject:
@@ -8185,7 +8156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1129456144368792144}
   m_itemField: {fileID: 747858839394549634}
 --- !u!1 &6393670900614743168
 GameObject:
@@ -8425,7 +8395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6255948300015392510}
   m_itemField: {fileID: 6634293912617503005}
 --- !u!1 &6513659511967573662
 GameObject:
@@ -8574,7 +8543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2702952948829376082}
   m_itemField: {fileID: 1344791716012852574}
 --- !u!1 &6717104961775419099
 GameObject:
@@ -8723,7 +8691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1700005100138482062}
   m_itemField: {fileID: 4200659106953249610}
 --- !u!1 &6753463172642185110
 GameObject:
@@ -8963,7 +8930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 997974481256744935}
   m_itemField: {fileID: 777605937794501282}
 --- !u!1 &6781064283067308721
 GameObject:
@@ -9203,7 +9169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4123350228005463999}
   m_itemField: {fileID: 8052669638339033699}
 --- !u!1 &6909201041185686170
 GameObject:
@@ -9443,7 +9408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 832022190870742837}
   m_itemField: {fileID: 4224666605084618574}
 --- !u!1 &6951852535146520028
 GameObject:
@@ -10185,7 +10149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2984869895032755407}
   m_itemField: {fileID: 3395171427961677896}
 --- !u!1 &7089044561677889163
 GameObject:
@@ -10334,7 +10297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 7427847615023153013}
   m_itemField: {fileID: 8912564051219841841}
 --- !u!1 &7188902134442489992
 GameObject:
@@ -10483,7 +10445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2953169815869983426}
   m_itemField: {fileID: 8070438004126952965}
 --- !u!1 &7301445292657035121
 GameObject:
@@ -10632,7 +10593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4940149519070020083}
   m_itemField: {fileID: 2812160346698052060}
 --- !u!1 &7349969757892991523
 GameObject:
@@ -10963,7 +10923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 6456260323981670929}
   m_itemField: {fileID: 1887455886943021397}
 --- !u!1 &7603468225160217695
 GameObject:
@@ -11112,7 +11071,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8769796460875746893}
   m_itemField: {fileID: 2829217814010245044}
 --- !u!1 &7603531592144479143
 GameObject:
@@ -11261,7 +11219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1295276679774008554}
   m_itemField: {fileID: 4626359696532857235}
 --- !u!1 &7762575726579960523
 GameObject:
@@ -11592,7 +11549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 3485412199305891197}
   m_itemField: {fileID: 3139627157669569421}
 --- !u!1 &7975237725070115366
 GameObject:
@@ -11741,7 +11697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2963842311326264980}
   m_itemField: {fileID: 1194827388363699191}
 --- !u!1 &7977198541947952896
 GameObject:
@@ -11890,7 +11845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8870794601539814448}
   m_itemField: {fileID: 6454866809269684991}
 --- !u!1 &8057617458311941599
 GameObject:
@@ -12039,7 +11993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 7681484775121032804}
   m_itemField: {fileID: 8088722498483936824}
 --- !u!1 &8276037684300229485
 GameObject:
@@ -12279,7 +12232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4092870413791503052}
   m_itemField: {fileID: 4913330031670788642}
 --- !u!1 &8340881088392395798
 GameObject:
@@ -12701,7 +12653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 2097876282977477887}
   m_itemField: {fileID: 5833346434595293551}
 --- !u!1 &8432951628295841566
 GameObject:
@@ -12850,7 +12801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8731326952044231286}
   m_itemField: {fileID: 3642994371397261015}
 --- !u!1 &8444153455135274315
 GameObject:
@@ -12999,7 +12949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 3958142442922303533}
   m_itemField: {fileID: 8987105957193450261}
 --- !u!1 &8518394289775525279
 GameObject:
@@ -13148,7 +13097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8592303296151239341}
   m_itemField: {fileID: 5758484482401835972}
 --- !u!1 &8547016719384177338
 GameObject:
@@ -13297,7 +13245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 3449625866621511417}
   m_itemField: {fileID: 2176203656204834074}
 --- !u!1 &8674288550034633696
 GameObject:
@@ -13628,7 +13575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 567082829351571904}
   m_itemField: {fileID: 962697517816281036}
 --- !u!1 &8904843900925705168
 GameObject:
@@ -13777,7 +13723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 8972976043922531758}
   m_itemField: {fileID: 9185902796740723514}
 --- !u!1 &8976161850086288843
 GameObject:
@@ -14108,7 +14053,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 1223892022751823512}
   m_itemField: {fileID: 2963769446951791237}
 --- !u!1 &9195234087666033980
 GameObject:
