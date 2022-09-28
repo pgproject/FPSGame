@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 72836
+  controlID: 95261
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 72837
+  controlID: 95262
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 72838
+  controlID: 95263
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 318
     height: 543
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -225,24 +225,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 667}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8a16fdffa016fdffb616fdffaa28fdff4c70fdff6270fdff7870fdffaad3fdffbed3fdff5011feff6211feff3e38feff3853feff4053feffb8c6feff64d3feff54c6ffff32f8ffff3cf8ffff48f8ffff56f8ffff58f8ffff14fbffff0a5200003a520000525200005c520000
+      m_ExpandedIDs: fe58fcff1459fcff127cfcff88bbfcff9ebbfcffa8bbfcffb4bbfcffc2bbfcffc4bbfcff34fffcff36fffcff8a16fdffa016fdffb616fdffaa28fdff4c70fdff6270fdff7870fdffaad3fdffbed3fdff5011feff6211feff3e38feff3853feff4053feffb8c6feff64d3feff54c6ffff32f8ffff3cf8ffff48f8ffff56f8ffff58f8ffff14fbffff0a5200003a520000525200005c520000504501009045010038470100584801006a480100e6480100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas
-        m_OriginalName: Canvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1988
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -346,21 +346,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/UI
+    - Assets/Prefabs/Enviroment
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/UI
+  - Assets/Prefabs/Enviroment
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\MOS_LENOVO_REGINA\Documents\projkety\FPSGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 83}
-    m_SelectedIDs: f2510000
-    m_LastClickedID: 20978
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: b8510000
+    m_LastClickedID: 20920
     m_ExpandedIDs: 00000000305000004050000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -414,8 +414,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 34fffcff
-    m_LastClickedInstanceID: -196812
+    m_SelectedInstanceIDs: f258fcff
+    m_LastClickedInstanceID: -239374
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000f64e00009653000084540000
     m_RenameOverlay:
@@ -506,7 +506,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -196812
+  m_LastInspectedObjectInstanceID: -239374
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
