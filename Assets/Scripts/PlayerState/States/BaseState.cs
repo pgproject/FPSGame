@@ -47,6 +47,8 @@ namespace Assets.Scripts.PlayerState.States
             {
                 if (m_playerController.CurrentInteractObject != null)
                 {
+                    m_generalAccess.GameManager.SetCursorState(true);
+
                     m_playerController.CurrentInteractObject.Interact();
                     m_stateMachine.ChangeState(m_playerController.EquipmentOpenState);
                 }

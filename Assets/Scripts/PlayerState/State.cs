@@ -10,6 +10,7 @@ public abstract class State
     protected PlayerInput m_playerInput;
     protected PlayerButtons m_playerButtons = PlayerButtons.Instance;
     protected PlayerMovmentData m_playerMovmentData;
+    protected GeneralAccess m_generalAccess;
 
     protected InputAction m_mousePosAction;
     protected InputAction m_movmentAction;
@@ -19,7 +20,8 @@ public abstract class State
     protected InputAction m_interactAction;
     protected State (PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput)
     {
-        m_playerMovmentData = GeneralAccess.Instance.PlayerMovmentData;
+        m_generalAccess = GeneralAccess.Instance;
+        m_playerMovmentData = m_generalAccess.PlayerMovmentData;
 
         m_playerController = playerController;
         m_stateMachine = stateMachine;

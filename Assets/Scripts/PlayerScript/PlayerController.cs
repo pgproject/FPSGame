@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
     private bool m_canRotate;
     private RaycastHit m_raycastHit;
     private IInteractableObject m_currentInteractObject;
-
-
     public bool IsGround => m_isGround;
     public IInteractableObject CurrentInteractObject => m_currentInteractObject;
     private void Start()

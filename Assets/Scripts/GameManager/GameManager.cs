@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SetCursorState(false);
+    }
+
+    public void SetCursorState(bool isVisible)
+    {
+        Cursor.lockState = isVisible ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = isVisible;
     }
 }

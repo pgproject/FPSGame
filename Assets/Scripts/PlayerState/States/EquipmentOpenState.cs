@@ -35,6 +35,8 @@ public class EquipmentOpenState : State
         {
             if (m_playerController.CurrentInteractObject != null)
             {
+                m_generalAccess.GameManager.SetCursorState(false);
+
                 m_playerController.CurrentInteractObject.Interact();
                 m_stateMachine.ChangeState(m_stateMachine.PreavoiusState);
             }
