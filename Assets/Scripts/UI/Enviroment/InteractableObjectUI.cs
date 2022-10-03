@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObjectUI : UIObject
 {
-    private PlayerEquipmentExchnage m_playerEquipmentExchnage;
+    private PlayerInventoryExchnage m_playerEquipmentExchnage;
     private void Start()
     {
         m_playerEquipmentExchnage = GeneralAccess.Instance.PlayerEquipmentExchange;

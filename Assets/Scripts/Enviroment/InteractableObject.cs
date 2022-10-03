@@ -8,7 +8,7 @@ public class InteractableObject : MonoBehaviour, IInteractableObject
     [SerializeField] private InteractableObjectUI m_interactableObjectUI;
     
     private bool m_isClose = true;
-    private PlayerEquipmentExchnage m_playerEquipmentExchnage;
+    private PlayerInventoryExchnage m_playerEquipmentExchnage;
 
     private void Start()
     {

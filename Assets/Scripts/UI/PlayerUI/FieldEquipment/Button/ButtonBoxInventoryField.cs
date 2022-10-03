@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonBoxEquipmentField : ButtonEquipmentField
+public class ButtonBoxInventoryField : ButtonInventoryField
 {
     public override void ButtonFieldClick()
     {

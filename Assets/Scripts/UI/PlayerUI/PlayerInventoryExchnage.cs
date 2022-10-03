@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEquipmentExchnage : UIObject
+public class PlayerInventoryExchnage : UIObject
 {
     private UIObject m_currentOpenInteractableObject;
     public UIObject CurrentOpenInteractableObject => m_currentOpenInteractableObject;

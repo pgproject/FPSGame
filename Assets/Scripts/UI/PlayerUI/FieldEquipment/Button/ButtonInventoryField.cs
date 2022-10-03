@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class ButtonEquipmentField : MonoBehaviour
+public abstract class ButtonInventoryField : MonoBehaviour
 {
     [SerializeField] protected ItemField m_itemField;
-    protected PlayerEquipmentExchnage m_playerEquipmentExchnage;
+    protected PlayerInventoryExchnage m_playerEquipmentExchnage;
 
     protected virtual void Start()
     {

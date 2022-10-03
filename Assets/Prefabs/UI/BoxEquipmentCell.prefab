@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2335135946165037117}
   - component: {fileID: 6006622606629999524}
   - component: {fileID: 4442997973901179527}
-  - component: {fileID: 5698830151680648786}
+  - component: {fileID: 6665036274374334975}
   m_Layer: 5
   m_Name: BoxEquipmentCell
   m_TagString: Untagged
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5698830151680648786}
-        m_TargetAssemblyTypeName: ButtonBoxEquipmentField, Assembly-CSharp
+      - m_Target: {fileID: 6665036274374334975}
+        m_TargetAssemblyTypeName: ButtonBoxInventoryField, Assembly-CSharp
         m_MethodName: ButtonFieldClick
         m_Mode: 1
         m_Arguments:
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5698830151680648786
+--- !u!114 &6665036274374334975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6395f67e5533d44acfd0f186f836c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 4442997973901179527}
   m_itemField: {fileID: 2004801299238189312}
 --- !u!1 &8005174091724226662
 GameObject:

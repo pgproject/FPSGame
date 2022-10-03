@@ -23,8 +23,8 @@ public class GeneralAccess : MonoBehaviour
     [SerializeField] private PlayerMovmentData m_playerMovmentData;
     public PlayerMovmentData PlayerMovmentData => m_playerMovmentData;
 
-    [SerializeField] private PlayerEquipmentExchnage m_playerEquipmentExchange;
-    public PlayerEquipmentExchnage PlayerEquipmentExchange => m_playerEquipmentExchange;
+    [SerializeField] private PlayerInventoryExchnage m_playerEquipmentExchange;
+    public PlayerInventoryExchnage PlayerEquipmentExchange => m_playerEquipmentExchange;
 
     [SerializeField] private GameManager m_gameManager;
     public GameManager GameManager => m_gameManager;
