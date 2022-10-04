@@ -3,6 +3,7 @@ using UnityEditor;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities.Editor;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerDataWindow : OdinMenuEditorWindow
 {
@@ -13,15 +14,26 @@ public class PlayerDataWindow : OdinMenuEditorWindow
     }
 
     private CreatePlayerData m_createPlayerMovmentData;
+    private CreateItems<Weapons> m_createWeaponItems;
+    private CreateItems<Shields> m_createShieldsItems;
 
     protected override OdinMenuTree BuildMenuTree()
     {
         var tree = new OdinMenuTree();
 
         m_createPlayerMovmentData = new CreatePlayerData();
+        m_createWeaponItems = new CreateItems<Weapons>();
+        m_createShieldsItems = new CreateItems<Shields>();
+
 
         tree.Add("Create New Player Data", m_createPlayerMovmentData);
+        tree.Add("Create new weapons List", m_createWeaponItems);
+        tree.Add("Create new shields list", m_createShieldsItems);
+
+
         tree.AddAllAssetsAtPath("Palyer data", "Assets/ScriptableObjects/PlayerData/", typeof(PlayerData));
+        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Item>));
+        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Shield>));
 
         return tree;
     }

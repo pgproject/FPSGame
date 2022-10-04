@@ -5,22 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public class CreatePlayerData
+public class CreatePlayerData : CreateDataBaseClass
 {
-    private const string ASSET_EXTENSION = ".asset";
-    [SerializeField, Required] private string m_scriptableObjectName;
-    [SerializeField, FolderPath(RequireExistingPath = true), Required] private string m_scriptableObjectPath;
     [field: SerializeField, ValueDropdown("FindPlayerDataClass", AppendNextDrawer = true)] public PlayerData PlayerData { get; private set; }
-
-
-    public string SciptableObjectPath => m_scriptableObjectPath;
     public CreatePlayerData()
     {
         PlayerData = ScriptableObject.CreateInstance<PlayerData>();
     }
 
     [Button("Add new player movment data")]
-    private void CreateNewPlayerMovmentData()
+    protected override void CreateData()
     {
         if (m_scriptableObjectName != string.Empty && m_scriptableObjectPath != string.Empty)
         {
