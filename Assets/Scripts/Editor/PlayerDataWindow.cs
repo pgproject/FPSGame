@@ -32,7 +32,7 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
 
         tree.AddAllAssetsAtPath("Palyer data", "Assets/ScriptableObjects/PlayerData/", typeof(PlayerData));
-        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Item>));
+        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Weapon>));
         tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Shield>));
 
         return tree;
