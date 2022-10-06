@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53f78e3bfbb86724ebb02f509d0f1bcd, type: 3}
-  m_Name: adsas
+  m_Name: Weapons
   m_EditorClassIdentifier: 
   m_scriptableObjectPath: 
   m_items: []

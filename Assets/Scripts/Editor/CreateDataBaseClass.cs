@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CreateDataBaseClass 
+public abstract class CreateDataBaseClass
 {
     protected const string ASSET_EXTENSION = ".asset";
     [SerializeField, Required] protected string m_scriptableObjectName;

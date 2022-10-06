@@ -9,5 +9,4 @@ public class Item : ScriptableObject
 
     [SerializeField] private Sprite m_spriteItem;
     public Sprite SpriteItem => m_spriteItem;
-
 }

@@ -9,6 +9,7 @@ public class ButtonBoxInventoryField : ButtonInventoryField
         if (m_itemField.GetItemField() == null) return;
 
         ItemField itemFieldInPlayerEquipment = m_playerEquipmentExchnage.CellManager.FindFreeItemField();
+        Debug.Log(m_itemField.GetItemField());
         itemFieldInPlayerEquipment.SetOccupiedItemField(m_itemField.GetItemField());
 
         m_itemField.SetEmptyItemField();

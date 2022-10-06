@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class EquipmentOpenState : State
 {
-    protected bool m_interactButtonPress;
+    protected bool m_openInventoryButtonPress;
     public EquipmentOpenState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
     {
 
@@ -14,6 +14,8 @@ public class EquipmentOpenState : State
     public override void Enter()
     {
         base.Enter();
+        m_playerController.OpenPlayerInventory();
+        m_generalAccess.GameManager.SetCursorState(true);
     }
 
     public override void Exit()
@@ -24,22 +26,16 @@ public class EquipmentOpenState : State
     public override void HandleInput()
     {
         base.HandleInput();
-        m_interactButtonPress = m_interactAction.triggered;
-
+        m_openInventoryButtonPress = m_openInventoryAction.triggered;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (m_interactButtonPress)
+        if (m_openInventoryButtonPress)
         {
-            if (m_playerController.CurrentInteractObject != null)
-            {
-                m_generalAccess.GameManager.SetCursorState(false);
-
-                m_playerController.CurrentInteractObject.Interact();
-                m_stateMachine.ChangeState(m_stateMachine.PreavoiusState);
-            }
+            m_playerController.ClosePlayerInventory();
+            m_stateMachine.ChangeState(m_stateMachine.PreavoiusState);
         }
     }
 

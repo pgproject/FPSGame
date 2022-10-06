@@ -14,6 +14,7 @@ public class PlayerDataWindow : OdinMenuEditorWindow
     }
 
     private CreatePlayerData m_createPlayerMovmentData;
+
     private CreateItems<Weapons> m_createWeaponItems;
     private CreateItems<Shields> m_createShieldsItems;
 
@@ -22,6 +23,7 @@ public class PlayerDataWindow : OdinMenuEditorWindow
         var tree = new OdinMenuTree();
 
         m_createPlayerMovmentData = new CreatePlayerData();
+
         m_createWeaponItems = new CreateItems<Weapons>();
         m_createShieldsItems = new CreateItems<Shields>();
 
@@ -47,7 +49,6 @@ public class PlayerDataWindow : OdinMenuEditorWindow
             DestroyImmediate(m_createPlayerMovmentData.PlayerData);
         }
     }
-
     protected override void OnBeginDrawEditors()
     {
         OdinMenuTreeSelection odinMenuSelectied = this.MenuTree.Selection;
@@ -67,5 +68,4 @@ public class PlayerDataWindow : OdinMenuEditorWindow
         }
         SirenixEditorGUI.EndHorizontalToolbar();
     }
-
 }

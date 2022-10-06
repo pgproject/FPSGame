@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObjectUI : UIObject
+public class InteractableObjectUI : UIObjectInventory
 {
     private PlayerInventoryExchnage m_playerEquipmentExchnage;
     private void Start()

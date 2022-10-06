@@ -18,6 +18,7 @@ public abstract class State
     protected InputAction m_jumpAction;
     protected InputAction m_runAction;
     protected InputAction m_interactAction;
+    protected InputAction m_openInventoryAction;
     protected State (PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput)
     {
         m_generalAccess = GeneralAccess.Instance;
@@ -33,6 +34,7 @@ public abstract class State
         m_mousePosAction = playerInput.actions.FindAction(m_playerButtons.MousePosition);
         m_runAction = playerInput.actions.FindAction(m_playerButtons.RunButton);
         m_interactAction = playerInput.actions.FindAction(m_playerButtons.InteractButton);
+        m_openInventoryAction = playerInput.actions.FindAction(m_playerButtons.OpenInventoryButton);
     }
     public virtual void Enter()
     {

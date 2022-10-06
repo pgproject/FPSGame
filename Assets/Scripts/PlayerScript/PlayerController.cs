@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour
     public CrouchingState CrouchingState { get; private set; }
     public JumpingState JumpingState { get; private set; }
     public EquipmentOpenState EquipmentOpenState { get; private set; }
+    public InteractionState InteractionState { get; private set; }
 
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
     [SerializeField] private Transform m_playerTransform;
     [SerializeField] private CapsuleCollider m_playerCollider;
     [SerializeField] private Camera m_playerCamera;
-    
+    [SerializeField] private UIObject m_playerInventory;
+    [SerializeField] private UIObject m_playerEquipment;
+
     private float m_cameraPosOnCrouch;
 
     private float m_speedHorizontalRotationCamera;
@@ -69,6 +72,7 @@ public class PlayerController : MonoBehaviour
         CrouchingState = new CrouchingState(this, StateMachine, m_playerInput);
         JumpingState = new JumpingState(this, StateMachine, m_playerInput);
         EquipmentOpenState = new EquipmentOpenState(this, StateMachine, m_playerInput);
+        InteractionState = new InteractionState(this, StateMachine, m_playerInput);
 
         StateMachine.Initialize(StandingState);
 
@@ -162,5 +166,15 @@ public class PlayerController : MonoBehaviour
     public void TurnOnGravity()
     {
         m_rigidbodyPlayer.useGravity = true;
+    }
+    public void OpenPlayerInventory()
+    {
+        m_playerInventory.Open();
+        m_playerEquipment.Open();
+    }
+    public void ClosePlayerInventory()
+    {
+        m_playerInventory.Close();
+        m_playerEquipment.Close();
     }
 }

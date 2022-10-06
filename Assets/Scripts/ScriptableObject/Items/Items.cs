@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class Items<T> : ScriptableObject where T : Item
+public abstract class Items<T> : ScriptableObject where T : Item
 {
     protected const string ASSET_EXTENSION = ".asset";
     [SerializeField, FolderPath(RequireExistingPath = true), Required] protected string m_scriptableObjectPath;

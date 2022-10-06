@@ -8,15 +8,22 @@ public class ItemField : MonoBehaviour
     [SerializeField] private int m_index;
 
     [SerializeField] private Image m_fieldImage;
-    private bool m_isFree => m_fieldImage.sprite == null;
+    [SerializeField] private Item m_item;
+
+    private bool m_isFree => m_item == null;
 
     public bool IsFree => m_isFree;
     public int Index => m_index;
     void Start()
     {
-        if (m_fieldImage.sprite == null)
+        if (m_item == null)
         {
             m_fieldImage.color = new Color(1, 1, 1, 0); 
+        }
+        else
+        {
+            m_fieldImage.color = new Color(1, 1, 1, 1);
+            m_fieldImage.sprite = m_item.SpriteItem;
         }
     }
 
@@ -25,18 +32,20 @@ public class ItemField : MonoBehaviour
         m_index = index;
     }
 
-    public void SetOccupiedItemField(Sprite fieldSprite)
+    public void SetOccupiedItemField(Item item)
     {
-        m_fieldImage.sprite = fieldSprite;
+        m_item = item;
+        m_fieldImage.sprite = item.SpriteItem;
         m_fieldImage.color = new Color(1, 1, 1, 1);
     }
     public void SetEmptyItemField()
     {
+        m_item = null;
         m_fieldImage.sprite = null;
         m_fieldImage.color = new Color(1, 1, 1, 0);
     }
-    public Sprite GetItemField()
+    public Item GetItemField()
     {
-        return m_fieldImage.sprite;
+        return m_item;
     }
 }

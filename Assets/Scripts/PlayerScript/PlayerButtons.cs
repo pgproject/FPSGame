@@ -37,4 +37,6 @@ public sealed class PlayerButtons
 
     private string m_interactButton = "Interact";
     public string InteractButton => m_interactButton;
+    private string m_oepnInventoryButton = "OpenInventory";
+    public string OpenInventoryButton => m_oepnInventoryButton;
 }

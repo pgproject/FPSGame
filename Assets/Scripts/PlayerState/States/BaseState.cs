@@ -14,7 +14,7 @@ namespace Assets.Scripts.PlayerState.States
         protected float m_movmentSpeed;
         protected float m_inAirSpeed;
         protected bool m_interactButtonPress;
-
+        protected bool m_openInventoryButtonPress;
         public BaseState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
         {
             m_runAction.started += ctx => m_movmentSpeed = m_playerMovmentData.RunSpeed;
@@ -37,7 +37,9 @@ namespace Assets.Scripts.PlayerState.States
             base.HandleInput();
             m_inputMovementVector = m_movmentAction.ReadValue<Vector2>();
             m_inputMousePosVector = m_mousePosAction.ReadValue<Vector2>();
+
             m_interactButtonPress = m_interactAction.triggered;
+            m_openInventoryButtonPress = m_openInventoryAction.triggered;
         }
 
         public override void LogicUpdate()
@@ -50,8 +52,13 @@ namespace Assets.Scripts.PlayerState.States
                     m_generalAccess.GameManager.SetCursorState(true);
 
                     m_playerController.CurrentInteractObject.Interact();
-                    m_stateMachine.ChangeState(m_playerController.EquipmentOpenState);
+                    m_stateMachine.ChangeState(m_playerController.InteractionState);
                 }
+            }
+            if (m_openInventoryButtonPress)
+            {
+                m_stateMachine.ChangeState(m_playerController.EquipmentOpenState);
+
             }
         }
 

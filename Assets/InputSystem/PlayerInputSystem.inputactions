@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PlayerInventory",
+                    "name": "OpenInventory",
                     "type": "Button",
                     "id": "85cf83fe-5b6a-4f0f-a7e5-dd65e65c581b",
                     "expectedControlType": "Button",
@@ -187,7 +187,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PlayerInventory",
+                    "action": "OpenInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
