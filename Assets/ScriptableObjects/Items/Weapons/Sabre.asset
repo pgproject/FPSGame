@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf7b30970a2f584f9e22c978e56cb65, type: 3}
   m_Name: Sabre
   m_EditorClassIdentifier: 
-  m_name: 
-  m_spriteItem: {fileID: 0}
+  m_name: Sabre
+  m_spriteItem: {fileID: 1525640171, guid: 87bafe201bbd958448589101f5c135d0, type: 3}
   m_damage: 0
