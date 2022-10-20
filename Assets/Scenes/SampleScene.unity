@@ -16435,6 +16435,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
+      propertyPath: abl
+      value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468508570, guid: 040d6d8f6b05ff9468fe3fe21779ca1c, type: 3}
       propertyPath: m_runSpeed
       value: 7
       objectReference: {fileID: 0}

@@ -15,8 +15,8 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
     private CreatePlayerData m_createPlayerMovmentData;
 
-    private CreateItems<Weapons> m_createWeaponItems;
-    private CreateItems<Shields> m_createShieldsItems;
+    private CreateItems<Weapons, Weapon> m_createWeaponItems;
+    private CreateItems<Shields, Shield> m_createShieldsItems;
 
     protected override OdinMenuTree BuildMenuTree()
     {
@@ -24,8 +24,8 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
         m_createPlayerMovmentData = new CreatePlayerData();
 
-        m_createWeaponItems = new CreateItems<Weapons>();
-        m_createShieldsItems = new CreateItems<Shields>();
+        m_createWeaponItems = new CreateItems<Weapons, Weapon>();
+        m_createShieldsItems = new CreateItems<Shields, Shield>();
 
 
         tree.Add("Create New Player Data", m_createPlayerMovmentData);

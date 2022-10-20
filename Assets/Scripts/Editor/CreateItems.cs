@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public class CreateItems<T> : CreateDataBaseClass where T : Items<Item>
+public class CreateItems<TItems, TItem> : CreateDataBaseClass where TItems : Items<TItem>
+                                                              where TItem : Item
 { 
-    [field: SerializeField] public T Items { get; private set; }
+    [field: SerializeField] public TItems Items { get; private set; }
 
     public CreateItems()
     {
-        Items = ScriptableObject.CreateInstance<T>();
+        Items = ScriptableObject.CreateInstance<TItems>();
     }
 
     [Button("Create list with items"), PropertyOrder(0)]
