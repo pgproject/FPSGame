@@ -12,11 +12,13 @@ public class PlayerDataWindow : OdinMenuEditorWindow
     {
         GetWindow<PlayerDataWindow>().Show();
     }
+    private const string m_pathForItems = "Assets/ScriptableObjects/Items/";
+
 
     private CreatePlayerData m_createPlayerMovmentData;
 
-    private CreateItems<Weapons, Weapon> m_createWeaponItems;
-    private CreateItems<Shields, Shield> m_createShieldsItems;
+    private Items<Weapon> m_weapons;
+    private Items<DefenseItem> m_defenseItem;
 
     protected override OdinMenuTree BuildMenuTree()
     {
@@ -24,18 +26,18 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
         m_createPlayerMovmentData = new CreatePlayerData();
 
-        m_createWeaponItems = new CreateItems<Weapons, Weapon>();
-        m_createShieldsItems = new CreateItems<Shields, Shield>();
-
+        m_weapons = new Items<Weapon>();
+        m_defenseItem = new Items<DefenseItem>();
 
         tree.Add("Create New Player Data", m_createPlayerMovmentData);
-        tree.Add("Create new weapons List", m_createWeaponItems);
-        tree.Add("Create new shields list", m_createShieldsItems);
 
+        tree.Add("Create weapon", m_weapons);
+        tree.Add("Create defense item", m_defenseItem);
 
         tree.AddAllAssetsAtPath("Palyer data", "Assets/ScriptableObjects/PlayerData/", typeof(PlayerData));
-        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Weapon>));
-        tree.AddAllAssetsAtPath("Items", "Assets/ScriptableObjects/Items/Weapons/", typeof(Items<Shield>));
+
+        tree.AddAllAssetsAtPath("Weapons", m_pathForItems + typeof(Weapon).Name, typeof(Weapon));
+        tree.AddAllAssetsAtPath("Defense Items", m_pathForItems + typeof(DefenseItem).Name, typeof(DefenseItem));
 
         return tree;
     }
@@ -51,21 +53,25 @@ public class PlayerDataWindow : OdinMenuEditorWindow
     }
     protected override void OnBeginDrawEditors()
     {
-        OdinMenuTreeSelection odinMenuSelectied = this.MenuTree.Selection;
-
-        SirenixEditorGUI.BeginHorizontalToolbar();
+        if (this.MenuTree != null)
         {
-            GUILayout.FlexibleSpace();
+            OdinMenuTreeSelection odinMenuSelectied = this.MenuTree.Selection;
 
-            if (SirenixEditorGUI.ToolbarButton("Delete current"))
+            SirenixEditorGUI.BeginHorizontalToolbar();
             {
-                PlayerData asset = odinMenuSelectied.SelectedValue as PlayerData;
+                GUILayout.FlexibleSpace();
 
-                string pathToAsset = AssetDatabase.GetAssetPath(asset);
-                AssetDatabase.DeleteAsset(pathToAsset);
-                AssetDatabase.SaveAssets();
+                if (SirenixEditorGUI.ToolbarButton("Delete current"))
+                {
+                    ScriptableObject asset = odinMenuSelectied.SelectedValue as ScriptableObject;
+
+                    string pathToAsset = AssetDatabase.GetAssetPath(asset);
+                    AssetDatabase.DeleteAsset(pathToAsset);
+                    AssetDatabase.SaveAssets();
+                }
             }
+            SirenixEditorGUI.EndHorizontalToolbar();
         }
-        SirenixEditorGUI.EndHorizontalToolbar();
     }
+
 }

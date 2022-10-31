@@ -8,6 +8,8 @@ using System;
 public class CreatePlayerData : CreateDataBaseClass
 {
     [field: SerializeField, ValueDropdown("FindPlayerDataClass", AppendNextDrawer = true)] public PlayerData PlayerData { get; private set; }
+
+    [SerializeField, FolderPath(RequireExistingPath = true), Required] protected string m_scriptableObjectPath;
     public CreatePlayerData()
     {
         PlayerData = ScriptableObject.CreateInstance<PlayerData>();
