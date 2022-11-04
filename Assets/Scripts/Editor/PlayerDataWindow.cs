@@ -1,9 +1,7 @@
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
-using Sirenix.OdinInspector;
 using Sirenix.Utilities.Editor;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerDataWindow : OdinMenuEditorWindow
 {
@@ -19,7 +17,7 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
     private Items<Weapon> m_weapons;
     private Items<DefenseItem> m_defenseItem;
-
+    private Items<Obstacle> m_obstacles;
     protected override OdinMenuTree BuildMenuTree()
     {
         var tree = new OdinMenuTree();
@@ -28,16 +26,19 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
         m_weapons = new Items<Weapon>();
         m_defenseItem = new Items<DefenseItem>();
+        m_obstacles = new Items<Obstacle>();
 
         tree.Add("Create New Player Data", m_createPlayerMovmentData);
 
         tree.Add("Create weapon", m_weapons);
         tree.Add("Create defense item", m_defenseItem);
+        tree.Add("Create obstacle", m_obstacles);
 
         tree.AddAllAssetsAtPath("Palyer data", "Assets/ScriptableObjects/PlayerData/", typeof(PlayerData));
 
         tree.AddAllAssetsAtPath("Weapons", m_pathForItems + typeof(Weapon).Name, typeof(Weapon));
         tree.AddAllAssetsAtPath("Defense Items", m_pathForItems + typeof(DefenseItem).Name, typeof(DefenseItem));
+        tree.AddAllAssetsAtPath("Obstalces", m_pathForItems + typeof(Obstacle).Name, typeof(Obstacle));
 
         return tree;
     }

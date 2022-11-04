@@ -8,13 +8,14 @@ using System.IO;
 
 public class Items<T> : CreateDataBaseClass where T : Item
 {
+    private const string m_pathForItems = "Assets/ScriptableObjects/Items/";
+
+    [field: SerializeField, ValueDropdown("FindItemClass")] public T NewItem { get; private set; }
+
     public Items()
     {
         NewItem = ScriptableObject.CreateInstance<T>();
     }
-    private const string m_pathForItems = "Assets/ScriptableObjects/Items/";
-
-    [field: SerializeField, ValueDropdown("FindItemClass")] public T NewItem { get; private set; }
 
     [Button("Create item")]
     protected override void CreateData()

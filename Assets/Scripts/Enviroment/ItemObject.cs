@@ -1,9 +1,9 @@
-using UnityEngine;
 using Sirenix.OdinInspector;
-using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-
-public class Item : ScriptableObject
+public class ItemObject : MonoBehaviour
 {
     [ReadOnly, SerializeField] private string m_name;
     public string Name => m_name;
