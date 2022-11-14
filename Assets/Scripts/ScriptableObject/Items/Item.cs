@@ -3,10 +3,9 @@ using Sirenix.OdinInspector;
 using UnityEditor;
 
 
-public class Item : ScriptableObject
+public abstract class Item : ScriptableObject
 {
-    [ReadOnly, SerializeField] private string m_name;
-    public string Name => m_name;
+    [ShowInInspector ,ReadOnly, PropertyOrder(-1)] public string ObjectName => name;
 
     [SerializeField, PreviewField(75, ObjectFieldAlignment.Left), PropertyOrder(1)] private Sprite m_spriteItem;
     public Sprite SpriteItem => m_spriteItem;
@@ -14,11 +13,9 @@ public class Item : ScriptableObject
     [SerializeField] private GameObject m_prefabObject;
     public GameObject PrefabObject => m_prefabObject;
 
+    [SerializeField] private ItemObject<Item> m_itemObject;
+    public ItemObject<Item> ItemObject => m_itemObject;
+
     [SerializeField, PreviewField(75, ObjectFieldAlignment.Left), PropertyOrder(2)] private Mesh m_meshObject;
     public Mesh MeshObject => m_meshObject;
-
-    public void SetName(string name)
-    {
-        m_name = name;
-    }
 }

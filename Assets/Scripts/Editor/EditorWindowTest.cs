@@ -10,7 +10,6 @@ using UnityEngine;
 
 public class EditorWindowTest : OdinEditorWindow
 {
-    //[ValueDropdown("Values", AppendNextDrawer = true), BoxGroup("settings"), SerializeField] public A m_playerData;
     [MenuItem("Windows/ editor window test")]
 
     private static void OpenWindow()
@@ -18,11 +17,12 @@ public class EditorWindowTest : OdinEditorWindow
         GetWindow<EditorWindowTest>().Show();
     }
 
-
-
-
-    //private IEnumerable<A> Values => TypeCache
-    //    .GetTypesDerivedFrom<A>()
-    //    .Select(type => (A)Activator.CreateInstance(type));
-        
+    [ValueDropdown(nameof(Components))] public Type[] NewItemObject;
+    private IEnumerable<Type> Components()
+    {
+        return from assembly in AppDomain.CurrentDomain.GetAssemblies()
+               from type in assembly.GetTypes()
+               where typeof(Component).IsAssignableFrom(type)
+               select type;
+    }
 }

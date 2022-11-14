@@ -15,24 +15,24 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
     private CreatePlayerData m_createPlayerMovmentData;
 
-    private Items<Weapon> m_weapons;
-    private Items<DefenseItem> m_defenseItem;
-    private Items<Obstacle> m_obstacles;
+    private Items<Weapon, WeaponObject> m_weapons;
+    //private Items<DefenseItem> m_defenseItem;
+    //private Items<Obstacle> m_obstacles;
     protected override OdinMenuTree BuildMenuTree()
     {
         var tree = new OdinMenuTree();
 
         m_createPlayerMovmentData = new CreatePlayerData();
 
-        m_weapons = new Items<Weapon>();
-        m_defenseItem = new Items<DefenseItem>();
-        m_obstacles = new Items<Obstacle>();
+        m_weapons = new Items<Weapon, WeaponObject>();
+        //m_defenseItem = new Items<DefenseItem>();
+        //m_obstacles = new Items<Obstacle>();
 
         tree.Add("Create New Player Data", m_createPlayerMovmentData);
 
         tree.Add("Create weapon", m_weapons);
-        tree.Add("Create defense item", m_defenseItem);
-        tree.Add("Create obstacle", m_obstacles);
+        //tree.Add("Create defense item", m_defenseItem);
+        //tree.Add("Create obstacle", m_obstacles);
 
         tree.AddAllAssetsAtPath("Palyer data", "Assets/ScriptableObjects/PlayerData/", typeof(PlayerData));
 
