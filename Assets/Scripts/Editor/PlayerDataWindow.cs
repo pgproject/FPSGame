@@ -2,7 +2,9 @@ using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using Sirenix.Utilities.Editor;
 using UnityEngine;
-
+using Sirenix.Serialization;
+using System;
+[Serializable]
 public class PlayerDataWindow : OdinMenuEditorWindow
 {
     [MenuItem("Windows/ Player data window")]
@@ -15,7 +17,7 @@ public class PlayerDataWindow : OdinMenuEditorWindow
 
     private CreatePlayerData m_createPlayerMovmentData;
 
-    private Items<Weapon, WeaponObject> m_weapons;
+    [SerializeField] private Items<Weapon, WeaponObject> m_weapons;
     //private Items<DefenseItem> m_defenseItem;
     //private Items<Obstacle> m_obstacles;
     protected override OdinMenuTree BuildMenuTree()
