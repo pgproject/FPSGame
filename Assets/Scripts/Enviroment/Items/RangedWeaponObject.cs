@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class RangedWeaponObject : WeaponObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Pool m_arrowObjectPool;
+    public override void Attack()
     {
-        
+        Debug.Log(transform.forward);
+        Arrow arrow = (Arrow)m_arrowObjectPool.ObjectPool.Get();
+        arrow.SetForwardVector(transform.forward);
+        arrow.OnGetObjFromPool(arrow.transform.position, Quaternion.Euler(0, 0, 90));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

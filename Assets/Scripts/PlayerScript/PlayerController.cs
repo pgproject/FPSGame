@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public EquipmentOpenState EquipmentOpenState { get; private set; }
     public InteractionState InteractionState { get; private set; }
 
+
+
     [SerializeField] private PlayerInput m_playerInput;
     [SerializeField] private Rigidbody m_rigidbodyPlayer;
     [SerializeField] private Transform m_playerTransform;
@@ -23,9 +25,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera m_playerCamera;
     [SerializeField] private UIObject m_playerInventory;
     [SerializeField] private UIObject m_playerEquipment;
+    [SerializeField] private Animator m_animator;
+
+
+    //[SerializeField, ValueDropdown(nameof(ReturnAllAnim))] private string a;
+
+    //private IEnumerable<string> ReturnAllAnim
+    //{
+    //    get
+    //    {
+    //        List<string> anim = new List<string>();
+    //        for (int i = 0; i < m_animator.runtimeAnimatorController.animationClips.Length; i++)
+    //        {
+    //            anim.Add(m_animator.runtimeAnimatorController.animationClips[i].name);
+    //        }
+    //        return anim;
+    //    }
+    //}
+
+    [SerializeField] private WeaponObject m_currentWeapon;
 
     private float m_cameraPosOnCrouch;
-
     private float m_speedHorizontalRotationCamera;
     private float m_speedVerticalRotationCamera;
 
@@ -176,5 +196,10 @@ public class PlayerController : MonoBehaviour
     {
         m_playerInventory.Close();
         m_playerEquipment.Close();
+    }
+
+    public void Attack()
+    {
+        m_currentWeapon?.Attack();
     }
 }

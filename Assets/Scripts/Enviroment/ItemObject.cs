@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public abstract class ItemObject<T> : MonoBehaviour where T : Item
 {
-    [ReadOnly, SerializeField] private string m_nameObject;
-    public string NameObject => m_nameObject;
+    public string NameObject => gameObject.name;
 
     [SerializeField, PreviewField(75, ObjectFieldAlignment.Left), PropertyOrder(1)] private Sprite m_spriteItem;
     public Sprite SpriteItem => m_spriteItem;
@@ -20,12 +19,18 @@ public abstract class ItemObject<T> : MonoBehaviour where T : Item
     private bool m_objectIsInEquipment;
     public bool ObjectIsInEquipment => m_objectIsInEquipment;
 
-    public void SetPreporties(string name, Sprite sprite, Mesh mesh)
+    public void SetPreporties(Sprite sprite, Mesh mesh, Material meshMaterial, Material spriteMaterial)
     {
-        m_nameObject = name;
-        gameObject.name = m_nameObject;
         m_spriteItem = sprite;
         m_meshObject = mesh;
+        gameObject.AddComponent<MeshFilter>();
+        gameObject.AddComponent<MeshRenderer>();
+
+
+        MeshFilter mesh1 = GetComponent<MeshFilter>();
+        mesh1.mesh = mesh;
+        MeshRenderer mesh2 = GetComponent<MeshRenderer>();
+        mesh2.material = meshMaterial;
     }
     
     public void ChangeStateOfItem(bool itemInEquipment)

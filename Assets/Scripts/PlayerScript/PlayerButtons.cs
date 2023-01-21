@@ -39,4 +39,7 @@ public sealed class PlayerButtons
     public string InteractButton => m_interactButton;
     private string m_oepnInventoryButton = "OpenInventory";
     public string OpenInventoryButton => m_oepnInventoryButton;
+
+    private string m_baseAttackButton = "BaseAttack";
+    public string BaseAttackButton => m_baseAttackButton;
 }

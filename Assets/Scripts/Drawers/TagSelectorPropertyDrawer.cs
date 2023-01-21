@@ -22,6 +22,7 @@ public class TagSelectorPropertyDrawer : PropertyDrawer
             {
                 List<string> tagList = new List<string>();
                 tagList.Add("<NoTag>");
+                //tagList.AddRange()
                 tagList.AddRange(UnityEditorInternal.InternalEditorUtility.tags);
                 string propertyString = property.stringValue;
                 int index = -1;

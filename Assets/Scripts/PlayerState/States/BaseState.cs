@@ -13,8 +13,10 @@ namespace Assets.Scripts.PlayerState.States
 
         protected float m_movmentSpeed;
         protected float m_inAirSpeed;
+
         protected bool m_interactButtonPress;
         protected bool m_openInventoryButtonPress;
+        protected bool m_aatackButtonPrees;
         public BaseState(PlayerController playerController, StateMachine stateMachine, PlayerInput playerInput) : base(playerController, stateMachine, playerInput)
         {
             m_runAction.started += ctx => m_movmentSpeed = m_playerMovmentData.RunSpeed;
@@ -40,6 +42,7 @@ namespace Assets.Scripts.PlayerState.States
 
             m_interactButtonPress = m_interactAction.triggered;
             m_openInventoryButtonPress = m_openInventoryAction.triggered;
+            m_aatackButtonPrees = m_baseAttackAction.triggered;
         }
 
         public override void LogicUpdate()
@@ -59,6 +62,10 @@ namespace Assets.Scripts.PlayerState.States
             {
                 m_stateMachine.ChangeState(m_playerController.EquipmentOpenState);
 
+            }
+            if (m_aatackButtonPrees)
+            {
+                m_playerController.Attack();
             }
         }
 

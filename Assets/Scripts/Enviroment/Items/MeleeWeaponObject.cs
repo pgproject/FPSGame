@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MeleeWeaponObject : WeaponObject
 {
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
